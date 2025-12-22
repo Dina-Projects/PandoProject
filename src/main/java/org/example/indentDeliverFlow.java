@@ -100,12 +100,9 @@ public class indentDeliverFlow {
                                             //Material/LR number
                                             wait.until(ExpectedConditions.elementToBeClickable(By.xpath("//*[contains(text(),'Document')]"))).click();
                                             //wait.until(ExpectedConditions.elementToBeClickable(By.xpath("//*[@class='upload-material']"))).sendKeys("C:/Users/durga/Downloads/indent-Material-PAND-816068-M-9-2025-12-20T13_56_19.677Z.xlsx");
-                                            //wait.until(ExpectedConditions.elementToBeClickable(By.xpath("//*[contains(text(),'Enter LR number')]"))).isDisplayed();
-                                            //WebElement ee = driver.findElement(By.xpath("//*[contains(text(),'Enter LR number')]"));
-                                            //actions.moveByOffset(48, 8).doubleClick().perform();
-                                            //wait.until(ExpectedConditions.elementToBeClickable(By.xpath("//*[contains(text(),'Enter LR number')]"))).sendKeys("999888");
-
-                                            driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(10));
+                                            driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(5000));
+                                            actions.moveToElement(driver.findElement(By.xpath("//*[contains(text(),'Enter LR number')]"))).click().perform();
+                                            wait.until(ExpectedConditions.elementToBeClickable(By.xpath("//*[@placeholder='Enter LR number']"))).sendKeys("999888");
                                             driver.findElement(By.xpath("//*[@class='text-blue']")).click();
                                             successMsg = wait.until(ExpectedConditions.visibilityOfElementLocated(By.xpath("//*[@role='alert']/div/span"))).getText();
                                             System.out.println(successMsg);
@@ -163,6 +160,7 @@ public class indentDeliverFlow {
                                             //logoff
                                             wait.until(ExpectedConditions.elementToBeClickable(By.xpath("//li[@class='app-side-menu']/span"))).click();
                                             wait.until(ExpectedConditions.elementToBeClickable(By.xpath("//*[contains(text(),'LOG OUT')]"))).click();
+                                            System.out.println("Logged out successfully");
                                             driver.quit();
                                         } else {
                                             System.out.println("Indent Not created");
