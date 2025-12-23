@@ -39,9 +39,9 @@ public class UserCreation {
         driver.findElement(By.xpath("//*[@class='el-switch__label el-switch__label--left is-active']/following-sibling::span[1]")).click();
 
         //assigning permission
-//        driver.findElement(By.xpath("/html/body/div[6]/div/div/section/div/div[2]/form/span[7]/div/div/div/div[1]/div/i")).click();
-//        driver.findElement(By.xpath("/html/body/div[6]/div/div/section/div/div[2]/form/span[7]/div/div/div/div[2]/div/div[1]/div/input")).sendKeys("Dummydepot");
-//        driver.findElement(By.xpath("//*[contains(text(),'Dummydepot')]")).click();
+        driver.findElement(By.xpath("/html/body/div[6]/div/div/section/div/div[2]/form/span[7]/div/div/div/div[1]/div/i")).click();
+        driver.findElement(By.xpath("/html/body/div[6]/div/div/section/div/div[2]/form/span[7]/div/div/div/div[2]/div/div[1]/div/input")).sendKeys("Dummydepot"+id);
+        driver.findElement(By.xpath("//*[contains(text(),'Dummydepot"+id+"')]")).click();
         driver.findElement(By.xpath("//span[contains(text(),'Create')]")).click();
 
         //validate success message

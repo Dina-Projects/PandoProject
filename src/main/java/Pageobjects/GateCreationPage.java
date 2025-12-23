@@ -38,8 +38,8 @@ public class GateCreationPage {
             driver.findElement(By.xpath("//div[@class='el-input']/input[@placeholder='Enter Reference Id']")).sendKeys("ref"+id);
             driver.findElement(By.xpath("//*[contains(text(),'USE DEPOT ADDRESS')]/parent::div/div/span[2]")).click();
             //selecting user
-//            driver.findElement(By.xpath("//input[@placeholder='Search user to add']")).sendKeys("user903");
-//            wait.until(ExpectedConditions.elementToBeClickable(By.xpath("//span[contains(text(),'sample')]"))).click();
+            driver.findElement(By.xpath("//input[@placeholder='Search user to add']")).sendKeys("user903");
+            wait.until(ExpectedConditions.elementToBeClickable(By.xpath("//span[contains(text(),'sample')]"))).click();
 
             wait.until(ExpectedConditions.elementToBeClickable(By.xpath("//span[contains(text(),'Create')]"))).click();
 
