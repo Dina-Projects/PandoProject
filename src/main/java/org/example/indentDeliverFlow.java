@@ -1,19 +1,19 @@
 package org.example;
 
 import Pageobjects.*;
+import Utils.ExcelUtils;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.interactions.Actions;
 import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.WebDriverWait;
-
 import java.time.Duration;
 
 public class indentDeliverFlow {
     String successMsg;
     String indentNum;
     String orderStatus;
-    String id="9050";
+    String id="9049";
 
     public void main() {
         try {
@@ -99,7 +99,10 @@ public class indentDeliverFlow {
 
                                             //Material/LR number
                                             wait.until(ExpectedConditions.elementToBeClickable(By.xpath("//*[contains(text(),'Document')]"))).click();
-                                            //wait.until(ExpectedConditions.elementToBeClickable(By.xpath("//*[@class='upload-material']"))).sendKeys("C:/Users/durga/Downloads/indent-Material-PAND-816068-M-9-2025-12-20T13_56_19.677Z.xlsx");
+                                            //excel writing
+                                            ExcelUtils.writeCsv(id);
+                                            wait.until(ExpectedConditions.elementToBeClickable(By.xpath("//*[@class='upload-material']"))).sendKeys("C:/Users/durga/Downloads/indent-Material-PAND-816068-M-9-2025-12-20T13_56_19.677Z.xlsx");
+
                                             driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(5000));
                                             actions.moveToElement(driver.findElement(By.xpath("//*[contains(text(),'Enter LR number')]"))).click().perform();
                                             wait.until(ExpectedConditions.elementToBeClickable(By.xpath("//*[@placeholder='Enter LR number']"))).sendKeys("999888");
